@@ -1,0 +1,329 @@
+﻿<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+  padding-top:60px;
+}
+
+#masthead {
+  min-height:199px;
+}
+
+#masthead h1 {
+  font-size: 55px;
+  line-height: 1;
+  margin-top:50px;
+}
+
+#masthead .well {
+  margin-top:31px;
+  min-height:127px;
+}
+
+.story-img {
+  margin-top:25%;
+  display:block;
+}
+
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  margin-left: 105px;
+  position: absolute;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  margin-left: 50px;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: url("img/star1.png");
+   position: absolute;
+}
+
+
+#ratingTitle{
+  margin-top: 60px;
+}
+.error {color: #FF0000;}
+.radio
+{
+content: url("img/emptystar2.png");
+height: 20px;
+width: 20px;
+}
+</style>
+
+</head>
+
+<body>
+<!--LOGIN MODAL -->
+ <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Email:</label>
+            <input type="email" class="form-control" id="recipient-email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="recipient-password"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div> 
+
+<!--RATING MODAL -->
+
+<div class="modal fade" id="ratingModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Review</h4><span class="error">Your name will be displayed with the review</span>
+      </div>
+      <div class="modal-body">
+        <div class="rating">
+            <span><img id="5" src="img/emptystar1.png" height="54" width="54" onclick="reply_click(this.id)" alt="hi"></span>
+        <span><img id="4" src="img/emptystar1.png" height="54" width="54" onclick="reply_click(this.id)" alt="hi"> </span>
+        <span><img id="3" src="img/emptystar1.png" height="54" width="54" onclick="reply_click(this.id)" alt="hi"> </span>
+        <span><img id="2" src="img/emptystar1.png" height="54" width="54" onclick="reply_click(this.id)" alt="hi"> </span>
+        <span><img id="1" src="img/emptystar1.png" height="54" width="54" onclick="reply_click(this.id)" alt="hi"> </span>
+         </div>
+        <br>
+        <script type="text/javascript">
+          function reply_click(clicked_id)
+          {
+            window.alert(clicked_id);
+            return true;
+          }
+        </script>
+
+        <input type="text" id="ratingTitle"class="form-control" id="ratingTitle" placeholder="Rating Title">
+        <br>
+        <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--Comments MODAL -->
+
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Comments</h4>
+      </div>
+      <div class="modal-body">
+        <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>  
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--NAVBAR START -->
+
+      <div class="container-fluid">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Health Care</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="test.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Gym</a></li>
+                    <li><a href="#">Physiotherapy</a></li>
+                    <li><a href="#">Yoga</a></li>
+                    <li><a href="#">Dietitian</a></li>
+                   
+                  </ul>
+                </li>
+              </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../navbar/" data-remote="false" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                    <li><a href="form.html" >Register</a></li>
+               </ul>
+            </div>
+          </div>
+        </nav>
+       </div>
+<!-- NAVBAR END-->
+
+<!-- HEADING-->
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Gyms
+          <p class="lead">Catchy Subtitle Here</p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              Ad Space      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<!-- LIST-->
+
+ <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <a class="story-img" href="#"><img src="" style="width:100px;height:100px" class="img-circle" alt="an image of the gym"></a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3>Story Title Here</h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <p>Features of Gym: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+                  <p class="lead"><ul class="list-inline">
+                    <li><button class="btn btn-default" data-toggle="collapse" data-target="#collapsePhotos" aria-expanded="false" aria-controls="collapsePhotos">Photos</button> </li>
+                     <li> <button class="btn btn-default" data-toggle="collapse" data-target="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails">Contact Details</button></li>
+                     <li> <button class="btn btn-default" data-toggle="collapse" data-target="#collapseFees" aria-expanded="false" aria-controls="collapseFees">Fees</button></li>
+                     <li><button class="btn btn-default" data-toggle="modal" data-target="#ratingModal">Add a review</button></li>
+                     </ul> </p>
+                   
+                   <!--wells-->
+
+                      <p><div class="collapse" id="collapseDetails">
+                      <div class="well">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                       </div>
+                      </div></p>
+                      
+                      <p><div class="collapse" id="collapsePhotos">
+                       <div class="well">
+                       <ul class="list-inline">
+                       <li><a href="img/yoga_feature.jpg"> <img src="img/yoga_feature.jpg" class="img-responsive center-block" height="200px" width="200px" alt="Generic placeholder image" /> </a></li>
+                       <li> <a href="img/physio_feature.jpg"><img src="img/physio_feature.jpg" class="img-responsive center-block" height="200px" width="200px" alt="Generic placeholder image"></a></li>
+                       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200px" width="200px" alt="Generic placeholder image"></a> </li>
+                       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200px" width="200px" alt="Generic placeholder image"></a> </li>
+                       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200px" width="200px" alt="Generic placeholder image"></a> </li>
+                       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200px" width="200px" alt="Generic placeholder image"></a> </li>
+                     </ul>
+                       </div>
+                      </div></p>
+                      
+                      <p> <div class="collapse" id="collapseFees">
+                       <div class="well">INR 200
+                       </div>  </div></p> 
+                  <!--wells over-->
+
+                      <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
+                      <ul class="list-inline"><li><a href="#" data-toggle="modal" data-target="#commentModal" data-remote="false"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li><li><a href="#"><i class="glyphicon glyphicon-copy"></i> Average Review: 4.5/5</a></li></ul>
+                  </div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+<!--list item 1 over-->
+
+
+          <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <a class="story-img" href="#"><img src="" style="width:100px;height:100px" class="img-circle"></a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3>Post Heading Here</h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+                  <p class="lead"><button class="btn btn-default">Read More</button></p>
+                  <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
+                  <ul class="list-inline"><li><a href="#">5 Days Ago</a></li><li><a href="#"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li><li><a href="#"><i class="glyphicon glyphicon-share"></i> 45 Shares</a></li></ul>
+                  </div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+
+<!-- COLLAPSES-->
+<div class="collapse" id="collapseDetails">
+  <div class="well">s
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+</body>
+</html>

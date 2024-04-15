@@ -1,0 +1,350 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ 
+
+<style type="text/css">
+body {
+  margin-left: 30px;
+  padding-top:60px;
+}
+
+.error {color: #FF0000;}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  position: absolute;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  margin-left: 50px;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: url("img/star1.png");
+   position: absolute;
+}
+#ratingTitle{
+  margin-top: 60px;
+}
+
+.radio
+{
+content: url("img/emptystar2.png");
+height: 20px;
+width: 20px;
+}
+
+.well-lg{
+  background-color: white;
+   border-style: solid;
+    border-color: orange;
+}
+
+.panel-default{
+ border-color: orange; 
+ border-style: solid;
+}
+
+.panel-default > .panel-heading {
+    background-image: none;
+    background-color: #ffedcc;
+    color: #ffa500;
+    border-color: orange; 
+    
+}
+</style>
+
+
+</head>
+
+<body onload="codeAddress()">
+
+ <!--MODAL -->
+ <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Email:</label>
+            <input type="email" class="form-control" id="recipient-email" onkeyup="ValidateEmail()">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="recipient-password"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div> 
+ 
+<!--NAVBAR START -->
+
+      <div class="container-fluid">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Health Care</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="test.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                   <li><a href="#">Gym</a></li>
+                    <li><a href="#">Physiotherapy</a></li>
+                    <li><a href="#">Yoga</a></li>
+                    <li><a href="#">Dietitian</a></li>
+                  
+                  </ul>
+                </li>
+              </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../navbar/" data-remote="false" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                    <li><a href="form.html">Register</a></li>
+               </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+<!-- NAVBAR END-->
+
+
+  <h1 style="margin-left:20px;">YFC fitness</h1>
+
+
+<div class="col-md-8" style="margin-top:20px;">
+
+  <div class="panel panel-primary">
+  <div class="panel-heading">Features</div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.
+  </div></div>
+<div class="panel panel-success">
+  <div class="panel-heading">Photos</div>
+  <div class="panel-body" style="overflow:auto; height:300px;">
+     <ul class="list-inline">
+       <li><a href="img/yoga_feature.jpg"> <img src="img/yoga_feature.jpg" class="img-responsive center-block" height="200" width="200" alt="Generic placeholder image" /> </a></li>
+       <li> <a href="img/physio_feature.jpg"><img src="img/physio_feature.jpg" class="img-responsive center-block" height="200" width="200" alt="Generic placeholder image"></a></li>
+       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200" width="200" alt="Generic placeholder image"></a> </li>
+       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200" width="200" alt="Generic placeholder image"></a> </li>
+       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200" width="200" alt="Generic placeholder image"></a> </li>
+       <li><a href="img/diet_feature.jpg"> <img src="img/diet_feature.jpg" class="img-responsive center-block" height="200" width="200" alt="Generic placeholder image"></a> </li>
+    </ul>  
+  </div>
+</div>
+<div class="panel panel-info">
+<div class="panel-heading">Fees</div>
+  <div class="panel-body">
+    INR 200
+  </div></div>
+<div class="panel panel-warning">
+<div class="panel-heading">Contact Details</div>
+  <div class="panel-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    <br>
+    <br>
+  <div style="height:400px" id="map" ></div>
+<script type="text/javascript">
+function codeAddress() {
+   geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
+      zoom: 18,
+      center: latlng
+    }
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var address = "A/204, Shree Vallabh Yog, Daftary Road, Pushpa park, Malad(e), Mumbai:400097";
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+
+</script>
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum6nRIs04npnUan69qTmL_dCh4NG3qDE&callback=codeAddress">
+    </script>
+  </div></div>
+<div class="panel panel-danger">
+<div class="panel-heading">Add a review</div>
+  <div class="panel-body">
+     <div class="rating">
+        <span id="5" onclick="reply_click(this.id)"><img  src="img/emptystar1.png" height="54" width="54" alt="hi"></span>
+        <span id="4" onclick="reply_click(this.id)"><img  src="img/emptystar1.png" height="54" width="54" > </span>
+        <span id="3" onclick="reply_click(this.id)"><img  src="img/emptystar1.png" height="54" width="54"> </span>
+        <span id="2" onclick="reply_click(this.id)"><img  src="img/emptystar1.png" height="54" width="54" > </span>
+        <span id="1" onclick="reply_click(this.id)"><img  src="img/emptystar1.png" height="54" width="54" alt="hi"> </span>
+         </div>
+        <br>
+        <script type="text/javascript">
+          function reply_click(clicked_id)
+          {
+            window.alert(clicked_id);
+            return false;
+          }
+        </script>
+        <input type="text" id="ratingTitle"class="form-control" id="ratingTitle" placeholder="Rating Title">
+        <br>
+        <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+         <input style="margin-top:20px;" type="submit" class="btn btn-danger"></input>
+      </div>
+  </div></div>
+</div>
+
+<div class="col-md-4" style="margin-top:20px;">
+ <div class="panel panel-default">
+  <div class="panel-heading">Comments</div>
+  <div class="panel-body" style=" overflow:auto; height:1480px;">
+    
+    <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>
+      
+    <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>  
+         <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>  
+         <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>  
+         <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>  
+         <h5>Rahul Bhat</h5>
+        <div class="rating2">
+        <ul class="list-inline">
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+        <li><input type="radio" class="radio"></input></li>
+      </ul>
+         </div>
+       
+        <h4>Comment title</h4>
+         <p>Comments: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                  Aliquam in felis sit amet augue.</p>
+         <hr>  
+  </div>
+</div>
+
+</body>
+</html>
